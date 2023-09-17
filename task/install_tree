@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# cek apakah program tree sudah terinstall
+if command -v tree &> /dev/null
+then
+        echo "Program tree sudah terinstall"
+else
+        # jika program tree belum terinstall
+        read -p "Program 'tree' belum terinstall. Apakah $USER ingin menginstal>
+        if [[ $choice == "y" || $choice == "yes" ]]; then
+                # install program tree
+                sudo apt install -y tree
+                echo "Program 'tree' telah berhasil diinstall"
+        else
+                echo "Instalasi program 'tree' dibatalkan."
+        fi
+fi
