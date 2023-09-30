@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Membuat Directory
+for dika_directory in {1..50}
+do
+	mkdir "folder-$dika_directory"
+
+# Mengisi Directory dengan sebuah file
+	for file_dika in {1..50}
+	do
+		nama_file="folder-$dika_directory/file-$file_dika.txt"
+		touch "$nama_file"
+		echo "Halo saya adalah file ke $file_dika" >> "$nama_file"
+		echo "saya dibuat pada: $(date)" >> "$nama_file"
+	done
+done
